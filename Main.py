@@ -1,12 +1,12 @@
 from Travel import Building
 from Data_Init import initialize_db
 from Data_Man import create_entry, get_current_data
+from Data_Print import print_data
 
 def user():
     prompt = ""
     while prompt != "input" and prompt != "print":
         prompt = input("Would you like to 'input' or 'print' data? Once data is printed it will be archived: ")
-        print(prompt)
     check_prompt(prompt)
     
     #return Building(convertLoc(location), travel)
@@ -23,22 +23,22 @@ def check_prompt(prompt):
     if(prompt == "input"):
         input_data()
     elif(prompt == "print"):
-        print_data()
+        send_print()
 
 def input_data():
     location = input("Enter '1' for 7975 and '2' for 7900: ")
     travel = input("Enter '1' for one way and '2' for roundtrip: ")
     building = Building(convert_loc(location), travel)
     create_entry(building)
-    return f"Data has been added to storage!\n{building}"
+    print(f"Data has been added to storage!\n{building}")
 
-def print_data():
+def send_print():
     data = get_current_data()
-    print(data)
+    print_data(data)
 
 def main():
     initialize_db
-    print(user())
+    user()
 
 if __name__ == "__main__":
     main()

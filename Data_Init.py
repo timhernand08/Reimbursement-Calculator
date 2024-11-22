@@ -15,7 +15,7 @@ def initialize_db():
             trip_type TEXT NOT NULL,
             miles INTEGER NOT NULL,
             cost REAL NOT NULL,
-            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+            created_at TEXT DEFAULT CURRENT_DATE
             );
          ''')
  
@@ -26,7 +26,8 @@ def initialize_db():
             trip_type TEXT NOT NULL,
             miles INTEGER NOT NULL,
             cost REAL NOT NULL,
-            archived_on TEXT DEFAULT CURRENT_TIMESTAMP
+            created_at TEXT DATE
+            archived_on TEXT DEFAULT CURRENT_DATE
         );
     ''')
  
