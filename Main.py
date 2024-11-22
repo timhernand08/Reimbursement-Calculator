@@ -4,8 +4,9 @@ from Data_Man import create_entry, get_current_data
 
 def user():
     prompt = ""
-    while(prompt != "input" | "print"):
-        prompt = input("Would you like to 'input' or 'print' data? Once data is printed it will be archived.")
+    while prompt != "input" and prompt != "print":
+        prompt = input("Would you like to 'input' or 'print' data? Once data is printed it will be archived: ")
+        print(prompt)
     check_prompt(prompt)
     
     #return Building(convertLoc(location), travel)
@@ -33,6 +34,7 @@ def input_data():
 
 def print_data():
     data = get_current_data()
+    print(data)
 
 def main():
     initialize_db
