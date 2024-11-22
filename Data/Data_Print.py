@@ -1,11 +1,11 @@
-from Money import Money
+
 def print_data(data):
     print(f"{"Building":<15}{"Trip Type":<15}{"Miles":<15}{"Cost":<15}{"Date":<15}")
     total_cost:float  = 0
     for list in data:
         for index, variable in enumerate(list[1:6]):
             if index == 3:
-                print(f"${variable:<15}", end="")
+                print(f"${variable:<14}", end="")
                 total_cost += variable
             else:
                 print(f"{variable:<15}", end="")
