@@ -6,7 +6,7 @@ from Data_Print import print_data
 def user():
     prompt = ""
     while prompt != "input" and prompt != "print":
-        prompt = input("Would you like to 'input' 'input custom' or 'print' data?")
+        prompt = input("Would you like to 'input' or 'print' data?")
     check_prompt(prompt)
 
 def convert_loc(input):
@@ -22,8 +22,8 @@ def check_prompt(prompt):
         input_data()
     elif(prompt == "print"):
         send_print()
-    elif prompt == "input custom":
-        custom_input()
+    """elif prompt == "input custom":
+        custom_input()"""
 
 def input_data():
     location = input("Enter '1' for 7975 and '2' for 7900: ")
@@ -31,7 +31,8 @@ def input_data():
     building = Building(convert_loc(location), travel)
     create_entry(building)
     print(f"Data has been added to storage!\n{building}")
-
+"""
+Custom locations to be implemented later
 def custom_input():
     location1 = input("Enter where you traveled from: ")
     location2 = input("Enter where you traveled to: ")
@@ -39,6 +40,8 @@ def custom_input():
     building = Building(convert_loc(location), travel)
     create_entry(building)
     print(f"Data has been added to storage!\n{building}")
+"""
+
 
 def send_print():
     data = get_current_data()
