@@ -6,7 +6,7 @@ def create_entry(building: Building):
     connect = sqlite3.connect('User_data.db')
     cursor = connect.cursor()
     cursor.execute("""INSERT INTO current_db (building, trip_type, miles, cost) VALUES (:building, :triptype, :miles, :cost)"""
-                   , {'building': building.building, 'triptype':building.tripType, 'miles':building.miles, 'cost':building.cost})
+                   , {'building': building.building1, 'triptype':building.tripType, 'miles':building.miles, 'cost':building.cost})
     connect.commit()
     connect.close()
 

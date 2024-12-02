@@ -1,4 +1,8 @@
 import customtkinter
+from Travel import Building
+from Data_Man import create_entry
+from User_copy import input_data
+
 
 class MyRadioButtonFrame(customtkinter.CTkFrame):
     def __init__(self, master, title, locations):
@@ -41,7 +45,7 @@ class App(customtkinter.CTk):
         self.button.grid(row=3, column=0, padx=10, pady=10, sticky="ew", columnspan=2)
 
     def button_callback(self):
-        print(f"You have selected {self.checkbox_frame.getRadio()} and {self.checkbox_frame2.getRadio()}")
+        input_data(location1 = self.checkbox_frame.getRadio(), location2 = self.checkbox_frame2.getRadio())
 
 app = App()
 app.mainloop()
