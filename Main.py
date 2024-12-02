@@ -31,6 +31,7 @@ def input_data():
     building = Building(convert_loc(location), travel)
     create_entry(building)
     print(f"Data has been added to storage!\n{building}")
+
 """
 Custom locations to be implemented later
 def custom_input():
@@ -41,7 +42,6 @@ def custom_input():
     create_entry(building)
     print(f"Data has been added to storage!\n{building}")
 """
-
 
 def send_print():
     data = get_current_data()
